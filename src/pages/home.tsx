@@ -1,11 +1,8 @@
 import { Box, Button, Text, SegmentedControl } from '@mantine/core';
 import styles from '@/styles/Home.module.css';
-import { fetchHaiku } from '@/services/requests';
 import { useEffect, useState } from 'react';
 import { ShowPoem } from '@/components/ShowPoem';
 import { io } from 'socket.io-client';
-import { socketEmitter } from '@/services/socket';
-import { getTopWords } from '@/services/scraper';
 const socket = io('http://localhost:3000');
 
 function Home() {
