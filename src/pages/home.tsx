@@ -51,22 +51,70 @@ function Home() {
           { label: 'World News', value: 'news' },
         ]}
       />
-      <Box className={styles.nextButton}>
-        <Button
-          onClick={async () => {
-            handleNextEntry();
-          }}
-        >
-          Another Please
-        </Button>
-      </Box>
       {entries.length > 0 && currentEntryIndex < entries.length ? (
-        <ShowPoem poem={entries[currentEntryIndex]}></ShowPoem>
+        <Box className={styles.contentBody}>
+          <Button
+            onClick={async () => {
+              ///check if current poem has  a local storage item
+              /// if it does create updated poemData and emit update
+              handleNextEntry();
+            }}
+          >
+            Another Please
+          </Button>
+
+          <ShowPoem poem={entries[currentEntryIndex]}></ShowPoem>
+          <VoteButtons poem={entries[currentEntryIndex]}></VoteButtons>
+        </Box>
       ) : (
         <Text>No Poems</Text>
       )}
     </Box>
   );
 }
+
+const VoteButtons = (poem: any) => {
+  /// change a value in localstorage when another please if there is a value
+  /// then emit an update
+
+  const [vote, setVote] = useState(0);
+  const [canVote, setCanVote] = useState({ up: true, down: true });
+  const handleVote = async (direction: 'up' | 'down') => {
+    if (canVote[direction]) {
+      //   setVote((prevVote) => prevVote + (direction === 'up' ? 1 : -1));
+      await setCanVote((prevCanVote) => ({
+        ...prevCanVote,
+        [direction]: false,
+      }));
+      await setCanVote((prevCanVote) => ({
+        ...prevCanVote,
+        [direction === 'up' ? 'down' : 'up']: true,
+      }));
+
+      direction === 'up'
+        ? localStorage.setItem(`${poem.poem.id}`, 'good')
+        : localStorage.setItem(`${poem.poem.id}`, 'bad');
+      console.log({ poem });
+      console.log(localStorage.getItem(`${poem.poem.id}`));
+    }
+  };
+  return (
+    <Box className={styles.voteButtons}>
+      <Button
+        disabled={!canVote.down}
+        onClick={() => handleVote('down')}
+      >
+        UnGood
+      </Button>
+      <Button
+        disabled={!canVote.up}
+        onClick={() => handleVote('up')}
+      >
+        Sick
+      </Button>
+      {/* <p>Current vote count: ${canVote}</p> */}
+    </Box>
+  );
+};
 
 export default Home;
