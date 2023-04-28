@@ -284,6 +284,7 @@
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
+  height: 50vh;
 }
 .title {
   font-size: 8vw;
@@ -291,16 +292,37 @@
   /* padding-left: 12%; */
 }
 .dropDown {
-  margin-right: 20%;
+  /* margin-right: 20%; */
   /* padding-right: 20%; */
+  width: 120px;
 }
 .headerButtons {
+  width: 70vw;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
 .headerButtons > * {
+  width: 120px;
 }
+.contentBody {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contentBody > * {
+  margin-top: 5%;
+}
+.voteButtons {
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.voteButtons > Button {
+  width: 100px;
+}
+
 .poemContainer {
   border: 1px solid black;
   border-radius: 15px;
@@ -329,4 +351,5 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-top: 20%;
 }

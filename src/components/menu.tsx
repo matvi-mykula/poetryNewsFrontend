@@ -14,7 +14,7 @@ function DropDown() {
         position="bottom-start"
       >
         <Menu.Target>
-          <Button>Navigate</Button>
+          <Button w={120}>Navigate</Button>
         </Menu.Target>
 
         <Menu.Dropdown>

@@ -40,6 +40,7 @@ function Home() {
   return (
     <Box className={styles.homepage}>
       <SegmentedControl
+        color="blue"
         value={key}
         onChange={setKey}
         onClick={() => {
