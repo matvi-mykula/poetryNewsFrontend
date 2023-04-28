@@ -21,10 +21,17 @@ function DropDown() {
           <Menu.Item>
             <Link href="/about">About</Link>
           </Menu.Item>
-          <Menu.Item>Pop Culture</Menu.Item>
           <Menu.Item>
-            <Link href="/home">World News</Link>
+            {' '}
+            <Link href="/home">Poems as News</Link>
           </Menu.Item>
+          <Menu.Item>
+            {' '}
+            <Link href="/donate">Support Me</Link>
+          </Menu.Item>
+          {/* <Menu.Item>
+            <Link href="/home">World News</Link>
+          </Menu.Item> */}
           <Menu.Item>Gallery</Menu.Item>
         </Menu.Dropdown>
       </Menu>

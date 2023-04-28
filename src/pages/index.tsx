@@ -44,9 +44,15 @@ const Layout: React.FC<Props> = ({ children }) => {
             p="xs"
             className={styles.header}
           >
-            <DropDown></DropDown>
-
             <Text className={styles.title}>Subconscious News</Text>
+            <Box className={styles.headerButtons}>
+              {' '}
+              <DropDown></DropDown>
+              <Button>
+                <Link href="/donate">Support Me</Link>
+              </Button>
+            </Box>
+            {/* <Box></Box> */}
           </Header>
         }
         styles={(theme: {

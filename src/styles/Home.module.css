@@ -281,27 +281,26 @@
 /* I  added thesee styles ------------------------- */
 .header {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   /* justify-content: center; */
   align-items: center;
 }
 .title {
-  font-size: xx-large;
+  font-size: 8vw;
   font-weight: 700;
-  padding-left: 12%;
+  /* padding-left: 12%; */
 }
 .dropDown {
-  padding-left: 5%;
+  margin-right: 20%;
+  /* padding-right: 20%; */
 }
-.header > * {
-  /* margin-left: 5%; */
-  /* font-size: large; */
-  /* background-color: rgba(var(--callout-rgb), 0.5); */
-  /* border: 1px solid rgba(var(--callout-border-rgb), 0.3); */
-  /* border-radius: var(--border-radius); */
-  /* padding: 1rem; */
+.headerButtons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
-
+.headerButtons > * {
+}
 .poemContainer {
   border: 1px solid black;
   border-radius: 15px;

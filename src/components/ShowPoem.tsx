@@ -12,17 +12,22 @@ const ShowPoem = ({ poem }: ShowPoemProps) => {
   const backgroundColor = getColor(poem.sentiment);
 
   return (
-    <Box
-      className={styles.poemContainer}
-      sx={{ backgroundColor: `${backgroundColor}` }}
-    >
-      <Box className={styles.innerPoem}>
-        {' '}
-        <Text className={styles.poemText}>{poem.content[0]}</Text>
-        <Text className={styles.poemText}>{poem.content[1]}</Text>
-        <Text className={styles.poemText}>{poem.content[2]}</Text>
-        {/* <Text ta="center">{poem.id}</Text> */}
+    <Box>
+      <Box
+        className={styles.poemContainer}
+        sx={{ backgroundColor: `${backgroundColor}` }}
+      >
+        <Box className={styles.innerPoem}>
+          {' '}
+          <Text className={styles.poemText}>{poem.content[0]}</Text>
+          <Text className={styles.poemText}>{poem.content[1]}</Text>
+          <Text className={styles.poemText}>{poem.content[2]}</Text>
+          {/* <Text ta="center">{poem.id}</Text> */}
+        </Box>
       </Box>
+
+      {/* voting buttons */}
+      <Box></Box>
     </Box>
   );
 };
