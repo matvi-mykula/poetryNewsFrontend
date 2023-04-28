@@ -277,7 +277,8 @@
   }
 }
 
-/* I  added thesee styles */
+/* asdfasdg */
+/* I  added thesee styles ------------------------- */
 .header {
   display: flex;
   flex-direction: row;
@@ -304,12 +305,19 @@
 .poemContainer {
   border: 1px solid black;
   border-radius: 15px;
-  height: 50vh;
-  width: 50vw;
+  height: 30vh;
+  width: 70vw;
   margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .innerPoem {
-  margin-top: 40%;
+  /* margin-top: 40%; */
+}
+.poemText {
+  text-align: center;
+  font-weight: 600;
 }
 
 .nextButton {

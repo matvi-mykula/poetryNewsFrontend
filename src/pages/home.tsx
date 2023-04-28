@@ -59,7 +59,6 @@ function Home() {
         >
           Another Please
         </Button>
-        <p>{currentEntryIndex}</p>
       </Box>
       {entries.length > 0 && currentEntryIndex < entries.length ? (
         <ShowPoem poem={entries[currentEntryIndex]}></ShowPoem>
