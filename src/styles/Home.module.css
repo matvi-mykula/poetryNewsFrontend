@@ -321,6 +321,9 @@
   .headerButtons > * {
     margin-left: 5%;
   }
+  .homepage {
+    margin-top: 5%;
+  }
 }
 
 .contentBody {
