@@ -1,5 +1,5 @@
 type PoemData = {
-  id: string;
+  id: number;
   datestamp: Date;
   category: 'pop' | 'news';
   content: string[];

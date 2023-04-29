@@ -10,19 +10,13 @@ const VoteButtons = (poem: any) => {
   const [canVote, setCanVote] = useState({ good: true, bad: true });
   useEffect(() => {
     const handle = async () => {
-      console.log(localStorage);
-      console.log(poem.poem.id);
       const localVote = localStorage.getItem(poem.poem.id);
-      console.log({ localVote });
-
       if (localVote === 'good') {
-        console.log('getting good somehow');
         await setCanVote({
           good: false,
           bad: true,
         });
       } else if (localVote === 'bad') {
-        console.log('getting bad somehow');
         await setCanVote({
           good: true,
           bad: false,
@@ -40,7 +34,6 @@ const VoteButtons = (poem: any) => {
   }, [poem.poem.id]);
 
   const handleVote = async (direction: 'good' | 'bad') => {
-    console.log({ direction });
     if (canVote[direction]) {
       await setCanVote((prevState) => ({
         ...prevState,
