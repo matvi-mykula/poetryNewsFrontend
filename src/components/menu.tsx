@@ -8,7 +8,7 @@ function DropDown() {
       <Menu
         shadow="md"
         width={200}
-        trigger="hover"
+        // trigger="hover"
         openDelay={100}
         closeDelay={400}
         position="bottom-start"

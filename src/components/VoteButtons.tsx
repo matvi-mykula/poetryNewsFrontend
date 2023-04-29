@@ -44,6 +44,7 @@ const VoteButtons = (poem: any) => {
         [direction === 'good' ? 'bad' : 'good']: true,
       }));
       localStorage.setItem(`${poem.poem.id}`, direction);
+      localStorage.setItem('new', 'vote');
     }
   };
   return (

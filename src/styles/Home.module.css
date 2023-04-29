@@ -284,7 +284,8 @@
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  height: 50vh;
+  border: 1px solid black;
+  /* background-color: rgb(235, 248, 213); */
 }
 .title {
   font-size: 8vw;
@@ -305,6 +306,22 @@
 .headerButtons > * {
   width: 120px;
 }
+@media screen and (min-width: 600px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+  }
+  .title {
+    font-size: 35px;
+  }
+  .headerButtons {
+    justify-content: end;
+  }
+  .headerButtons > * {
+    margin-left: 5%;
+  }
+}
+
 .contentBody {
   display: flex;
   flex-direction: column;
@@ -324,7 +341,7 @@
 }
 
 .poemContainer {
-  border: 1px solid black;
+  border: 2px solid black;
   border-radius: 15px;
   height: 30vh;
   width: 70vw;
