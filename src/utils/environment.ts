@@ -8,6 +8,7 @@ function figureAPI() {
   let environment;
   prodEnv ? (environment = prodBackend) : (environment = devBackend);
   console.log({ prodEnv });
+  console.log(environment);
   return environment;
 }
 
