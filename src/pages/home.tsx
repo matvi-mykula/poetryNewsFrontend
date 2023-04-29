@@ -59,6 +59,23 @@ function Home() {
             onClick={async () => {
               ///check if current poem has  a local storage item
               /// if it does create updated poemData and emit update
+              console.log(entries[currentEntryIndex]);
+              const vote = localStorage.getItem(
+                `${entries[currentEntryIndex].id}`
+              );
+              const newVoteMarker = localStorage.getItem('new');
+              // dont update if its just looking at a poem already voted on
+              // if new vote or changed vote then update
+              if (vote && newVoteMarker) {
+                console.log('new vote exists');
+                const updatedPoem = entries[currentEntryIndex];
+                vote === 'good'
+                  ? (updatedPoem.goods += 1)
+                  : (updatedPoem.bads += 1);
+                localStorage.removeItem('new'); /// prevents old votes to be recast
+                socket.emit('poem:updated', updatedPoem);
+              }
+
               handleNextEntry();
             }}
           >
