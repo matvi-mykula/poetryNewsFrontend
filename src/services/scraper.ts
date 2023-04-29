@@ -23,7 +23,6 @@ const getTopWords = async (key: any) => {
     url = 'https://www.reddit.com/r/news/top.json';
   }
   const response = await scrapeResponse(url);
-  console.log(response);
   const pageTitles = response.postData;
   const combinedTitles: string = pageTitles.join(' ');
   combinedTitles.replace(/[^\p{L}\s]/gu, ''); ///removes non letter characters

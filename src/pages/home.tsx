@@ -5,7 +5,8 @@ import { ShowPoem } from '@/components/ShowPoem';
 import { VoteButtons } from '@/components/VoteButtons';
 import { io } from 'socket.io-client';
 import { PoemData } from '@/types';
-const socket = io('http://localhost:3000');
+import { environment } from '@/utils/environment';
+const socket = io(environment); // this is where the environment variable goes
 
 function Home() {
   const [key, setKey] = useState('pop');
