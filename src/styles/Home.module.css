@@ -307,6 +307,13 @@
 .headerButtons > * {
   width: 130px;
 }
+.homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20%;
+}
 @media screen and (min-width: 600px) {
   .header {
     display: flex;
@@ -365,12 +372,4 @@
 .nextButton {
   margin-top: 5%;
   margin-bottom: 5%;
-}
-
-.homepage {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20%;
 }
