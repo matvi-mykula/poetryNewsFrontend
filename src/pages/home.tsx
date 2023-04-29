@@ -2,13 +2,15 @@ import { Box, Button, Text, SegmentedControl } from '@mantine/core';
 import styles from '@/styles/Home.module.css';
 import { useEffect, useState } from 'react';
 import { ShowPoem } from '@/components/ShowPoem';
+import { VoteButtons } from '@/components/VoteButtons';
 import { io } from 'socket.io-client';
+import { PoemData } from '@/types';
 const socket = io('http://localhost:3000');
 
 function Home() {
   const [key, setKey] = useState('pop');
   const [poem, setPoem] = useState<string[]>([]);
-  const [entries, setEntries] = useState([]);
+  const [entries, setEntries] = useState<PoemData[]>([]);
   const [currentEntryIndex, setCurrentEntryIndex] = useState(0);
   const [loaded, setLoaded] = useState(false); /// might not need this
 
@@ -34,7 +36,6 @@ function Home() {
     currentEntryIndex === entries.length - 1
       ? setCurrentEntryIndex(0)
       : setCurrentEntryIndex((prevIndex) => prevIndex + 1);
-    console.log(currentEntryIndex);
   };
 
   return (
@@ -73,49 +74,5 @@ function Home() {
     </Box>
   );
 }
-
-const VoteButtons = (poem: any) => {
-  /// change a value in localstorage when another please if there is a value
-  /// then emit an update
-
-  const [vote, setVote] = useState(0);
-  const [canVote, setCanVote] = useState({ up: true, down: true });
-  const handleVote = async (direction: 'up' | 'down') => {
-    if (canVote[direction]) {
-      //   setVote((prevVote) => prevVote + (direction === 'up' ? 1 : -1));
-      await setCanVote((prevCanVote) => ({
-        ...prevCanVote,
-        [direction]: false,
-      }));
-      await setCanVote((prevCanVote) => ({
-        ...prevCanVote,
-        [direction === 'up' ? 'down' : 'up']: true,
-      }));
-
-      direction === 'up'
-        ? localStorage.setItem(`${poem.poem.id}`, 'good')
-        : localStorage.setItem(`${poem.poem.id}`, 'bad');
-      console.log({ poem });
-      console.log(localStorage.getItem(`${poem.poem.id}`));
-    }
-  };
-  return (
-    <Box className={styles.voteButtons}>
-      <Button
-        disabled={!canVote.down}
-        onClick={() => handleVote('down')}
-      >
-        UnGood
-      </Button>
-      <Button
-        disabled={!canVote.up}
-        onClick={() => handleVote('up')}
-      >
-        Sick
-      </Button>
-      {/* <p>Current vote count: ${canVote}</p> */}
-    </Box>
-  );
-};
 
 export default Home;
