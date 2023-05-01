@@ -11,8 +11,8 @@ const About = () => {
           <Accordion.Control>About</Accordion.Control>
           <Accordion.Panel>
             This site digests the titles of news articles and makes them into
-            poems. Generated via OpenAI API prompts, these are not always Haikus
-            but they are supposed to be!
+            poems. Generated via OpenAI API prompts, these poems are not always
+            good. Be judgemental!
           </Accordion.Panel>
         </Accordion.Item>
 
@@ -20,8 +20,8 @@ const About = () => {
           <Accordion.Control>This Project and AI</Accordion.Control>
           <Accordion.Panel>
             While OpenAI makes use of art to generate what some call &quot;ai
-            art&quot; However, the goal here is to let the popculture and
-            worldnews be absorbed via osmosis not to create Poetry or Art.
+            art&quot; , the goal here is to let popculture and worldnews be
+            absorbed via osmosis not to create Poetry or Art.
           </Accordion.Panel>
         </Accordion.Item>
 
