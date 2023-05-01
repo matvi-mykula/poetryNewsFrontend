@@ -10,6 +10,7 @@ interface ShowPoemProps {
 const ShowPoem = ({ poem }: ShowPoemProps) => {
   console.log({ poem });
   const backgroundColor = getColor(poem.sentiment);
+  const poemLines = poem.content.map((line) => line.replace(/[{}"]/g, ''));
 
   return (
     <Box>
@@ -18,7 +19,7 @@ const ShowPoem = ({ poem }: ShowPoemProps) => {
         sx={{ backgroundColor: `${backgroundColor}` }}
       >
         <Box className={styles.innerPoem}>
-          {poem.content.map((line, index) => (
+          {poemLines.map((line, index) => (
             <Text
               key={index}
               className={styles.poemText}

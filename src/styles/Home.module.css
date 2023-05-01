@@ -314,24 +314,6 @@
   align-items: center;
   margin-top: 20%;
 }
-@media screen and (min-width: 600px) {
-  .header {
-    display: flex;
-    flex-direction: row;
-  }
-  .title {
-    font-size: 35px;
-  }
-  .headerButtons {
-    justify-content: end;
-  }
-  .headerButtons > * {
-    margin-left: 5%;
-  }
-  .homepage {
-    margin-top: 5%;
-  }
-}
 
 .contentBody {
   display: flex;
@@ -355,21 +337,45 @@
   border: 2px solid black;
   border-radius: 15px;
   height: 30vh;
-  width: 70vw;
+  width: 80vw;
   margin: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .innerPoem {
+  white-space: nowrap;
   /* margin-top: 40%; */
 }
 .poemText {
   text-align: center;
   font-weight: 600;
+  font-size: 12px;
 }
 
 .nextButton {
   margin-top: 5%;
   margin-bottom: 5%;
+}
+
+@media screen and (min-width: 600px) {
+  .header {
+    display: flex;
+    flex-direction: row;
+  }
+  .title {
+    font-size: 35px;
+  }
+  .headerButtons {
+    justify-content: end;
+  }
+  .headerButtons > * {
+    margin-left: 5%;
+  }
+  .homepage {
+    margin-top: 5%;
+  }
+  .poemText {
+    font-size: 18px;
+  }
 }
