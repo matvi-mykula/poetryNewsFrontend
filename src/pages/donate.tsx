@@ -5,10 +5,7 @@ const Donate = () => {
   return (
     <Box>
       <Text>Please consider supporting me and donating a small amount!</Text>
-      <Text>
-        For this website I am paying to use OpenAI API. If you like what you see
-        then please tip!
-      </Text>
+      <Text></Text>
       <br></br>
       <VenmoProfile></VenmoProfile>
     </Box>

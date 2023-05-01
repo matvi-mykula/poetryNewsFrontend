@@ -29,10 +29,10 @@ function DropDown() {
             {' '}
             <Link href="/donate">Support Me</Link>
           </Menu.Item>
-          {/* <Menu.Item>
-            <Link href="/home">World News</Link>
-          </Menu.Item> */}
-          <Menu.Item>Gallery</Menu.Item>
+
+          <Menu.Item>
+            <Link href="/gallery">Gallery</Link>
+          </Menu.Item>
         </Menu.Dropdown>
       </Menu>
     </Box>
