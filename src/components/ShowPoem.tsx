@@ -18,11 +18,14 @@ const ShowPoem = ({ poem }: ShowPoemProps) => {
         sx={{ backgroundColor: `${backgroundColor}` }}
       >
         <Box className={styles.innerPoem}>
-          {' '}
-          <Text className={styles.poemText}>{poem.content[0]}</Text>
-          <Text className={styles.poemText}>{poem.content[1]}</Text>
-          <Text className={styles.poemText}>{poem.content[2]}</Text>
-          {/* <Text ta="center">{poem.id}</Text> */}
+          {poem.content.map((line, index) => (
+            <Text
+              key={index}
+              className={styles.poemText}
+            >
+              {line}
+            </Text>
+          ))}{' '}
         </Box>
       </Box>
 
