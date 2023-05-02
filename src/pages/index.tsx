@@ -65,9 +65,6 @@ const Layout: React.FC<Props> = ({ children }) => {
               <Text className={styles.title}>Subconscious News</Text>
               <Box className={styles.headerButtons}>
                 {' '}
-                <Button>
-                  <Link href="/donate">Support Me</Link>
-                </Button>
                 <DropDown></DropDown>
               </Box>
               {/* <Box></Box> */}
