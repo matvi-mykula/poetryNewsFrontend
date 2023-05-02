@@ -345,7 +345,7 @@
 }
 .innerPoem {
   white-space: nowrap;
-  overflow: scroll;
+  overflow: hidden;
   /* margin-top: 40%; */
 }
 .poemText {
