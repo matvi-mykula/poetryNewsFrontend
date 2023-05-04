@@ -32,6 +32,7 @@ function Home() {
           message: `This page takes trending news headlines and makes poetry 
           from them. The color is tied to Natural Language Processing Sentiment Analysis. 
           Vote on whether or not the poems come out meaningful to you! `,
+          autoClose: 10000,
         });
       }
     });
