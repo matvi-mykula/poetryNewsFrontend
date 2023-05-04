@@ -6,6 +6,8 @@ import { VoteButtons } from '@/components/VoteButtons';
 import { io } from 'socket.io-client';
 import { PoemData } from '@/types';
 import { environment } from '@/utils/environment';
+import { notifications } from '@mantine/notifications';
+
 const socket = io(environment); // this is where the environment variable goes
 
 function Home() {
@@ -25,6 +27,12 @@ function Home() {
         setLoaded(true);
         console.log({ entries });
       }
+      notifications.show({
+        title: `Welcome!`,
+        message: `This page takes trending news headlines and makes poetry 
+        from them. The color is tied to Natural Language Processing Sentiment Analysis. 
+        Vote on whether or not the poems come out meaningful to you! `,
+      });
     });
     return () => {
       // Clean up event listeners when the component unmounts
