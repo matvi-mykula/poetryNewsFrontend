@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { Inter } from 'next/font/google';
+// import { Inter } from 'next/font/google';
 import styles from '@/styles/Home.module.css';
 import {
   AppShell,
@@ -15,10 +15,11 @@ import {
 import { Router, useRouter } from 'next/router';
 import Link from 'next/link';
 import DropDown from '@/components/menu';
+import { Notifications } from '@mantine/notifications';
 
 // import { Notifications } from '@mantine/notifications';
 
-const inter = Inter({ subsets: ['latin'] });
+// const inter = Inter({ subsets: ['latin'] });
 interface Props {
   children: React.ReactNode;
 }
@@ -33,6 +34,8 @@ const Layout: React.FC<Props> = ({ children }) => {
         withNormalizeCSS
         theme={{ fontFamily: 'monospace' }}
       >
+        <Notifications />
+
         <AppShell
           padding="md"
           // navbar={

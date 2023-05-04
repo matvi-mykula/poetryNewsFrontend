@@ -26,13 +26,14 @@ function Home() {
         await setEntries(data.data);
         setLoaded(true);
         console.log({ entries });
+        console.log('notify');
+        notifications.show({
+          title: `Welcome!`,
+          message: `This page takes trending news headlines and makes poetry 
+          from them. The color is tied to Natural Language Processing Sentiment Analysis. 
+          Vote on whether or not the poems come out meaningful to you! `,
+        });
       }
-      notifications.show({
-        title: `Welcome!`,
-        message: `This page takes trending news headlines and makes poetry 
-        from them. The color is tied to Natural Language Processing Sentiment Analysis. 
-        Vote on whether or not the poems come out meaningful to you! `,
-      });
     });
     return () => {
       // Clean up event listeners when the component unmounts
