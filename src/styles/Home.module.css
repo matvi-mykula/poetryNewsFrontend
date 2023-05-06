@@ -344,7 +344,7 @@
   justify-content: center;
 }
 .innerPoem {
-  white-space: nowrap;
+  white-space: wrap;
   overflow: hidden;
   padding: 5%;
   /* margin-top: 40%; */
