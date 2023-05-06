@@ -302,7 +302,7 @@
   width: 70vw;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
 }
 .headerButtons > * {
   width: 130px;
@@ -312,7 +312,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 20%;
+  margin-top: 15%;
 }
 
 .contentBody {
@@ -346,6 +346,7 @@
 .innerPoem {
   white-space: nowrap;
   overflow: hidden;
+  padding: 5%;
   /* margin-top: 40%; */
 }
 .poemText {
