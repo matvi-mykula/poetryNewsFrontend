@@ -11,11 +11,12 @@ import {
   Text,
   Menu,
   MantineProvider,
+  ButtonStylesParams,
 } from '@mantine/core';
 import { Router, useRouter } from 'next/router';
 import Link from 'next/link';
 import DropDown from '@/components/menu';
-import { Notifications } from '@mantine/notifications';
+import { Notifications, notifications } from '@mantine/notifications';
 
 // import { Notifications } from '@mantine/notifications';
 
@@ -32,7 +33,25 @@ const Layout: React.FC<Props> = ({ children }) => {
       <MantineProvider
         withGlobalStyles
         withNormalizeCSS
-        theme={{ fontFamily: 'monospace' }}
+        theme={{
+          fontFamily: 'monospace',
+          components: {
+            Button: {
+              styles: (theme, params: ButtonStylesParams) => ({
+                root: {
+                  border: '2px solid black',
+                },
+              }),
+            },
+            Header: {
+              styles: (theme) => ({
+                root: {
+                  border: '2px solid black',
+                },
+              }),
+            },
+          },
+        }}
       >
         <Notifications />
 
@@ -51,6 +70,9 @@ const Layout: React.FC<Props> = ({ children }) => {
             colorScheme: string;
             colors: { dark: any[]; gray: any[] };
           }) => ({
+            // Button: {
+            //   border: '2px solid black',
+            // },
             main: {
               backgroundColor:
                 theme.colorScheme === 'dark'

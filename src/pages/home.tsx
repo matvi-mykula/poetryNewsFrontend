@@ -18,6 +18,18 @@ function Home() {
   const [loaded, setLoaded] = useState(false); /// might not need this
 
   ///// ---- initialize
+
+  useEffect(() => {
+    /// should fire once in production
+    notifications.show({
+      title: `Welcome!`,
+      message: `This page takes trending news headlines and makes poetry 
+    from them. The color is tied to Natural Language Processing Sentiment Analysis. 
+    Vote on whether or not the poems come out meaningful to you! `,
+      autoClose: 10000,
+    });
+  }, []);
+
   useEffect(() => {
     console.log(loaded);
     socket.emit('get_todays_poems', key);
@@ -27,13 +39,6 @@ function Home() {
         setLoaded(true);
         console.log({ entries });
         console.log('notify');
-        notifications.show({
-          title: `Welcome!`,
-          message: `This page takes trending news headlines and makes poetry 
-          from them. The color is tied to Natural Language Processing Sentiment Analysis. 
-          Vote on whether or not the poems come out meaningful to you! `,
-          autoClose: 10000,
-        });
       }
     });
     return () => {
@@ -52,6 +57,7 @@ function Home() {
   return (
     <Box className={styles.homepage}>
       <SegmentedControl
+        style={{ border: '2px solid black' }}
         color="blue"
         value={key}
         onChange={setKey}
