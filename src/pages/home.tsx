@@ -56,6 +56,7 @@ function Home() {
 
   return (
     <Box className={styles.homepage}>
+      {/* <Button onClick={() => socket.emit('create:poem', key)}></Button> */}
       <SegmentedControl
         style={{ border: '2px solid black' }}
         color="blue"
