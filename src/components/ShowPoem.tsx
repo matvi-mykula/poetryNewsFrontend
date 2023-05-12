@@ -11,7 +11,7 @@ const ShowPoem = ({ poem }: ShowPoemProps) => {
   console.log({ poem });
   const backgroundColor = getColor(poem.sentiment);
   const poemLines = poem.content.map((line) =>
-    line.replace(/[{}"]/g, '').replace(/\\\\/g, '')
+    line.replace(/[{}"\\]/g, '').replace(/\\\\/g, '')
   );
 
   return (
